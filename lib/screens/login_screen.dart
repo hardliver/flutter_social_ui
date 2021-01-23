@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_social_ui/widgets/curve_clipper.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -14,11 +15,14 @@ class _LoginScreenState extends State<LoginScreen> {
           height: MediaQuery.of(context).size.height,
           child: Column(
             children: <Widget>[
-              Image(
-                height: MediaQuery.of(context).size.height / 2.5,
-                width: double.infinity,
-                image: AssetImage('assets/images/login_background.jpg'),
-                fit: BoxFit.cover,
+              ClipPath(
+                clipper: CurveClipper(),
+                child: Image(
+                  height: MediaQuery.of(context).size.height / 2.5,
+                  width: double.infinity,
+                  image: AssetImage('assets/images/login_background.jpg'),
+                  fit: BoxFit.cover,
+                ),
               ),
               Text(
                 'FRENZY',
